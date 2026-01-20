@@ -9,15 +9,13 @@ The calculator allows users to:
 - Choose their residency status (for in-seat students)
 - Pick from various graduate programs in Education, Business, Nursing, and other fields
 - Adjust credit hours (1-12) using an interactive slider
-- View cost estimates per semester or annually
 
 ## Features
 
 - **Dynamic cost calculation** based on enrollment type, residency, program, and credit hours
 - **Interactive UI** with real-time updates and form validation
-- **Flexible configuration** via `window.netPriceConfig` for easy rate adjustments
+- **Flexible configuration** via `data-` attributes for easy rate adjustments
 - **Responsive design** matching Lincoln University's visual style
-- **Semester/year toggle** to view costs in different time periods
 
 ## Project Structure
 
