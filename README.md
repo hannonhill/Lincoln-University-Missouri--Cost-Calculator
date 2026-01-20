@@ -21,12 +21,11 @@ The calculator allows users to:
 
 ## Project Structure
 
-- `net-price-calculator.html` - Standalone calculator page with Lincoln University styles
-- `net-price-calculator.js` - Core calculator logic and form handling
-- `net-price-calculator.css` - Custom styling for the calculator
-- `Academics _ Lincoln University of Missouri.html` - Full page embedding the calculator
+- `prototype.html` - Scraped page used as a containerized template to render the graduate cost calculator in a layout matching Lincoln University
+- `assets/cost-calculator.js` - Calculator logic (tuition, program fees, books) with query string parameter features
+- `assets/cost-calculator.css` - Custom styling for the calculator
+- `assets/prototype-isolated.html` - Standalone mockup with the client-approved design
 - `Academics _ Lincoln University of Missouri_files/` - Downloaded Lincoln University assets (fonts, CSS, etc.)
-- `prototype/` - Early design mockups and experimental features
 - `Functional Requirements.png` - Visual specification of calculator requirements
 - `README-dev.md` - Developer-focused implementation notes
 
@@ -45,35 +44,46 @@ The calculator allows users to:
 
 ## Configuration
 
-Rates and slider settings can be adjusted via the `window.netPriceConfig` object in each HTML file:
+Adjustable values are stored in the `data-` attributes of the `#costCalculator` form element in both `prototype.html` and `assets/prototype-isolated.html`. These values include:
 
-```javascript
-window.netPriceConfig = {
-  slider: { min: 1, max: 12, default: 6, ticks: [1, 3, 6, 9, 12] },
-  bookCostPerCourse: 90,
-  tuitionRates: { 
-    online: 372, 
-    inseat: { instate: 372, outstate: 690 } 
-  },
-  programFeeRates: { edu: 15, bus: 20, nur: 125, other: 0 }
-};
+- `data-online-cost` - Online tuition rate per credit hour
+- `data-in-state-cost` - In-state tuition rate per credit hour
+- `data-out-of-state-cost` - Out-of-state tuition rate per credit hour
+- `data-edu-fee` - Education program fee per credit hour
+- `data-bus-fee` - Business program fee per credit hour
+- `data-nur-fee` - Nursing program fee per credit hour
+- `data-other-programs-fee` - Other programs fee per credit hour
+- `data-books-cost` - Book cost per course
+
+Example:
+```html
+<form id="costCalculator"
+    data-online-cost="372"
+    data-in-state-cost="372"
+    data-out-of-state-cost="690"
+    data-edu-fee="15"
+    data-bus-fee="20"
+    data-nur-fee="125"
+    data-other-programs-fee="0"
+    data-books-cost="90">
 ```
 
 ## Usage
 
-1. Open `net-price-calculator.html` in a web browser
-2. Select your enrollment type (Online or In-seat)
-3. Choose residency status (if applicable)
-4. Select your graduate program
-5. Adjust credit hours using the slider
-6. Click "Calculate my costs" to see your estimate
-7. Toggle between "Per semester" and "Per year" views as needed
+1. Open `prototype.html` or `assets/prototype-isolated.html` in a web browser
+2. Select your academic term
+3. Select your enrollment type (Online or In-seat)
+4. Choose residency status (if applicable)
+5. Select your graduate program
+6. Adjust credit hours using the slider
+7. Click "Calculate Total Cost" to see your estimate
 
 ## Development Notes
 
 - The calculator uses vanilla JavaScript with no external dependencies
 - Form validation ensures all required fields are completed before calculation
 - Book costs are estimated at $90 per course (3 credit hours = 1 course)
+- Query string parameters can be used to pre-populate form values
 - All cost figures are estimates and may vary based on actual enrollment
 
 ## Disclaimer
