@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate Studies Cost Calculator - Lincoln University</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer=""></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Graduate Studies Cost Calculator</h1>
+            <p>Estimate your tuition and fees for Graduate Programs at Lincoln University</p>
+        </div>
+
+        <div class="calculator-wrapper">
+            <div class="calculator-form">
+                <form id="costCalculator"
+                    data-online-cost="372"
+                    data-in-state-cost="372"
+                    data-out-of-state-cost="690"
+                    data-edu-fee="15"
+                    data-bus-fee="20"
+                    data-nur-fee="125"
+                    data-other-programs-fee="0"
+                    data-books-cost="90">
+                    <div class="form-section">
+                        <h3>Academic Period</h3>
+                        <div class="form-group" id="semesterGroup">
+                            <label for="semester">Select Your Term</label>
+                            <select id="semester" name="semester">
+                                <option value="">-- Select Term --</option>
+                                <option value="fall2025/spring2026">Fall 2025 / Spring 2026</option>
+                                <option value="summer2026">Summer 2026</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Enrollment Information</h3>
+                        <div class="form-group" id="enrollment-section">
+                            <label>Enrollment Type</label>
+                            <div class="radio-group">
+                                <div class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="enrollmentType" value="online" id="online">
+                                    <label for="online">Online (LUO) - ECD, HED, MSN, MBA.MGT, MED.K12</label>
+                                </div>
+                                <div class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="enrollmentType" value="inseat" id="inseat">
+                                    <label for="inseat">In-Seat (On Campus)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group hidden" id="residencyGroup">
+                            <label>Residency Status</label>
+                            <div class="radio-group">
+                                <div class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="residency" value="instate" id="instate">
+                                    <label for="instate">Missouri Resident (In-State)</label>
+                                </div>
+                                <div class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="residency" value="outstate" id="outstate">
+                                    <label for="outstate">Non-Missouri Resident (Out-of-State)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Academic Program</h3>
+                        <div class="form-group" id="programGroup">
+                            <label for="program">Select Your Graduate Program</label>
+                            <select id="program" name="program">
+                                <option value="">-- Select a Program --</option>
+                                <optgroup label="Education Programs (EDU/HED) - $15/hr fee">
+                                    <option value="edu-ecd">Early Childhood Development (ECD)</option>
+                                    <option value="edu-hed">Higher Education (HED)</option>
+                                    <option value="edu-medk12">Master of Education K-12 (MED.K12)</option>
+                                    <option value="edu-medcou">MEd Counseling (MEd.COU)</option>
+                                    <option value="edu-other">Other Education Programs</option>
+                                </optgroup>
+                                <optgroup label="Business Programs (BUS) - $20/hr fee">
+                                    <option value="bus-mba">MBA - General</option>
+                                    <option value="bus-mbamgt">MBA Management (MBA.MGT)</option>
+                                    <option value="bus-mbaother">MBA - Other Concentrations</option>
+                                </optgroup>
+                                <optgroup label="Nursing Programs (NUR) - $125/hr fee">
+                                    <option value="nur-msn">Master of Science in Nursing (MSN)</option>
+                                </optgroup>
+                                <optgroup label="Other Programs - No program fee">
+                                    <option value="other-agr">Agriculture (AGR)</option>
+                                    <option value="other-ns">Natural Sciences (NS)</option>
+                                    <option value="other-his">History (HIS)</option>
+                                    <option value="other-soc">Sociology/Criminal Justice (SOC/SCJ)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="creditGroup">
+                            <label for="creditHours">Credit Hours: <span id="creditHoursValue"
+                                    style="color: #0C2340; font-weight: bold; font-size: 1.25em;">6</span></label>
+                            <input type="range" id="creditHours" name="creditHours" min="1" max="12" value="6" step="1">
+                            <div
+                                style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.85rem; color: #7f8c8d;">
+                                <span>1</span>
+                                <!-- <span>3</span> -->
+                                <!-- <span>6</span> -->
+                                <!-- <span>9</span> -->
+                                <span id="sliderMax">12</span>
+                            </div>
+                            <p class="help-text">
+                                <span class="help-text_pill">
+                                    <i class="fas fa-info-circle" inert=""></i>
+                                    Every 3 credit hours = 1 course 
+                                </span>
+                                <span class="help-text_count">
+                                    <span id="courseCount">2</span>
+                                    course<span id="count_plural">s</span> selected
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-section">
+                        <h3>Additional Options</h3>
+                        <div class="checkbox-group">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="includeBooks" checked>
+                                <span>Books & Supplies</span>
+                                <span class="fee-amount">$90/course</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="calculator-buttons-wrapper">
+                        <button type="button" class="btnLrg" data-button-style="secondary" onclick="calculateCost()">Calculate Total Cost</button>
+                        <button type="button" class="btnLrg" data-button-style="alert" onclick="resetOptions()">Reset Options</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <h2>Estimated Cost Summary</h2>
+                </div>
+
+                <!-- <div class="period-selector">
+                    <button class="period-btn active" onclick="togglePeriod('semester')">Per Semester</button>
+                    <button class="period-btn" onclick="togglePeriod('year')">Per Year</button>
+                </div> -->
+
+                <div class="cost-breakdown">
+                    <div class="cost-category">
+                        <h3>Tuition & Fees</h3>
+                        <div class="cost-item">
+                            <span class="cost-label">Tuition (<span id="tuitionRate">$0</span>/credit hour)</span>
+                            <span class="cost-value" id="tuitionCost">$0</span>
+                        </div>
+                        <div class="cost-item">
+                            <span class="cost-label">Program Fees</span>
+                            <span class="cost-value" id="programFees">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="cost-category">
+                        <h3>Books & Supplies</h3>
+                        <div class="cost-item">
+                            <span class="cost-label">Books (<span id="numCourses">0</span> courses)</span>
+                            <span class="cost-value" id="booksCost">$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="total-section">
+                    <div class="total-label">Total Estimated Cost</div>
+                    <div class="total-amount" id="totalCost">$0</div>
+                    <div class="total-per">Per Semester</div>
+                </div>
+
+                <div class="disclaimer">
+                    <h3>
+                        <i class="fas fa-exclamation-triangle" inert=""></i>
+                        Important Note
+                    </h3>
+                    <p>This is an estimate only. Actual costs may vary based on specific course fees, lab fees, and
+                        other factors. Financial aid has not been deducted from these estimates. Please contact the
+                        <a href="https://www.lincolnu.edu/admissions/financial-aid/index.html" target="_parent">
+                        Financial Services office
+                        </a> for detailed information about your specific program and financial aid
+                        options.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
