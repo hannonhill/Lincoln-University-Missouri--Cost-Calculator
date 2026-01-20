@@ -1,4 +1,4 @@
-# Lincoln University Cost Calculator
+# 🧮 Lincoln University of Missouri Cost Calculator
 
 A web-based net price calculator for graduate programs at Lincoln University of Missouri. This tool helps prospective students estimate tuition, program fees, and book costs based on their enrollment details.
 
