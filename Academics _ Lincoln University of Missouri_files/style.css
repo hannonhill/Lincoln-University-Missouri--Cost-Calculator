@@ -482,12 +482,12 @@ header.header .wrapper { display: -ms-flex; display: -moz-flex; display: -webkit
 .searchMenu { position: relative; margin: 0 0 0 14px; text-align: right; align-self: center; }
 #toggleSearch { position: relative; width: 53px; height: 53px; color: #fff; font-size: 1rem; font-weight: 600; line-height: 1; background-color: transparent; border: 1px solid transparent; padding: 0; margin: 0; cursor: pointer; transition: all 0.4s ease-in-out; z-index: 1; }
 /* Desktop Search Open Button */
-#toggleSearch .openSearch { display: inline-block; width: 50px; height: 50px; background-image: url(../images/search-toggle-open.svg); background-repeat: no-repeat; margin: 0; padding: 0; vertical-align: middle; transition: background 0.4s ease-in-out; }
-#toggleSearch:hover .openSearch, #toggleSearch:focus .openSearch { color: #0C2340; background-image: url(../images/search-toggle-open-hover.svg); }
+#toggleSearch .openSearch { display: inline-block; width: 50px; height: 50px; background-image: url('https://www.lincolnu.edu/_global/images/search-toggle-open.svg'); background-repeat: no-repeat; margin: 0; padding: 0; vertical-align: middle; transition: background 0.4s ease-in-out; }
+#toggleSearch:hover .openSearch, #toggleSearch:focus .openSearch { color: #0C2340; background-image: url('https://www.lincolnu.edu/_global/images/search-toggle-open-hover.svg'); }
 .searchMenu.open #toggleSearch .openSearch { display: none; }
 /* Desktop Search Close Button */
-#toggleSearch .closeSearch { display: inline-block; font-size: .9rem; color: #0C2340;  width: 50px; height: 50px; background-image: url(../images/search-toggle-close.svg); background-repeat: no-repeat; margin: 0; padding: 0; vertical-align: middle; transition: background 0.4s ease-in-out; }
-#toggleSearch:hover .closeSearch, #toggleSearch:focus .closeSearch { color: #0C2340; background-image: url(../images/search-toggle-close-hover.svg); }
+#toggleSearch .closeSearch { display: inline-block; font-size: .9rem; color: #0C2340;  width: 50px; height: 50px; background-image: url('https://www.lincolnu.edu/_global/images/search-toggle-close.svg'); background-repeat: no-repeat; margin: 0; padding: 0; vertical-align: middle; transition: background 0.4s ease-in-out; }
+#toggleSearch:hover .closeSearch, #toggleSearch:focus .closeSearch { color: #0C2340; background-image: url('https://www.lincolnu.edu/_global/images/search-toggle-close-hover.svg'); }
 .searchActive { visibility: hidden; }
 #searchBoxMobile { position: relative; }
 .searchMenu #toggleSearch .closeSearch { display: none; }
@@ -504,8 +504,8 @@ header.header .wrapper { display: -ms-flex; display: -moz-flex; display: -webkit
 .searchBox:-moz-placeholder { color: #333; }
 .searchContainer.tablet { display: none; }
 .searchContainer input[type=search] { border: 0; padding: 5px 6px; width: 85%; font-size: 1rem; -webkit-appearance: none; margin: 0; font-style: normal; }
-.searchContainer button[type=submit] { position: relative; border: none; font-size: 1.125em; width: 45px; height: 45px; padding: 0; margin: 0; cursor: pointer; background-color: transparent; background-image: url(../images/search-icon.svg);  background-repeat: no-repeat; background-position: center; transition: background 0.4s ease-in-out; }
-.searchContainer button[type=submit]:hover, .searchContainer button[type=submit]:focus { background-image: url(../images/search-icon-hover.svg); }
+.searchContainer button[type=submit] { position: relative; border: none; font-size: 1.125em; width: 45px; height: 45px; padding: 0; margin: 0; cursor: pointer; background-color: transparent; background-image: url('https://www.lincolnu.edu/_global/images/search-icon.svg');  background-repeat: no-repeat; background-position: center; transition: background 0.4s ease-in-out; }
+.searchContainer button[type=submit]:hover, .searchContainer button[type=submit]:focus { background-image: url('https://www.lincolnu.edu/_global/images/search-icon-hover.svg'); }
 @media screen and (min-width: 1261px){
 	body { overflow-y: auto !important; }
 	/* Menu Container */
@@ -621,9 +621,9 @@ header.header .wrapper { display: -ms-flex; display: -moz-flex; display: -webkit
 	.searchBox:-ms-input-placeholder { color: #fff; }
 	.searchBox:-moz-placeholder { color: #fff; }
 	.searchContainer input[type=search] { width: 85%; }
-	.searchContainer button[type=submit] { position: absolute; top: 2px; bottom: auto; left: auto; right: 4px; width: 45px; height: 45px; background-image: url(../images/search-icon-mobile.svg); background-size: 45%; transition: none; }
+	.searchContainer button[type=submit] { position: absolute; top: 2px; bottom: auto; left: auto; right: 4px; width: 45px; height: 45px; background-image: url('https://www.lincolnu.edu/_global/images/search-icon-mobile.svg'); background-size: 45%; transition: none; }
 	.searchContainer button[type=submit]:hover, .searchContainer button[type=submit]:focus {
-    background-image: url(../images/search-icon-mobile.svg); }
+    background-image: url('https://www.lincolnu.edu/_global/images/search-icon-mobile.svg'); }
 }
 @media screen and (max-width: 580px){
 	/* Menu Container */
@@ -919,7 +919,7 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 	text-align: center;
 }
 /*.home-impact .caption strong.subTitle:before {
-	content:url("../images/icon.png");
+	content:url("https://www.lincolnu.edu/_global/images/icon.png");
 	display:block;
 	text-align: center;
 	margin-bottom:1rem;
@@ -1008,7 +1008,7 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 	text-transform: uppercase;
 }
 .home-impact a.anchorArrow:after {
-	content:url("../images/down-arrow.svg");
+	content:url("https://www.lincolnu.edu/_global/images/down-arrow.svg");
 	display:block;
 	width:20px;
 	margin: .5rem auto;
@@ -1233,7 +1233,7 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 	height:50px;
 }
 .featuredLinks a.popupYoutube .fa.fa-play:before {
-	content: url('../images/play-btn.svg');
+	content: url('https://www.lincolnu.edu/_global/images/play-btn.svg');
 	position: relative;
 	z-index: 1;
 	padding-left: 2px;
@@ -1450,22 +1450,22 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 .success .stories .slick-prev {
     left: 50%;
 	margin: 0 0 0 -60px;
-    background-image: url(../images/left-arrow-box.svg);
+    background-image: url('https://www.lincolnu.edu/_global/images/left-arrow-box.svg');
     background-position: center center;
     background-repeat: no-repeat;
 }
 .success .stories .slick-prev:hover, .success .stories .slick-prev:focus {
-	background-image: url(../images/left-arrow-box-hover.svg);
+	background-image: url('https://www.lincolnu.edu/_global/images/left-arrow-box-hover.svg');
 }
 .success .stories .slick-next {
     right: 50%;
 	margin: 0 -60px 0 0;
-    background-image: url(../images/right-arrow-box.svg);
+    background-image: url('https://www.lincolnu.edu/_global/images/right-arrow-box.svg');
     background-position: center center;
     background-repeat: no-repeat;
 }
 .success .stories .slick-next:hover, .success .stories .slick-next:focus {
-	background-image: url(../images/right-arrow-box-hover.svg);
+	background-image: url('https://www.lincolnu.edu/_global/images/right-arrow-box-hover.svg');
 }
 .success span img {
 	width:100%;
@@ -1803,7 +1803,7 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 	z-index: 3;
 }
 .columns .fa.fa-play:before, .fa.fa-play:before {
-	content: url('../images/play-btn.svg');
+	content: url('https://www.lincolnu.edu/_global/images/play-btn.svg');
 	position: relative;
 	z-index: 1;
 	padding-left: 2px;
@@ -2121,11 +2121,11 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 		text-transform: uppercase;
    }
 	.leftNav input[type=checkbox] + label:before {
-		content: url('../images/leftnav-toggle.png');
+		content: url('https://www.lincolnu.edu/_global/images/leftnav-toggle.png');
 		margin-right:1rem;
    }
 	.leftNav input[type=checkbox]:checked + label:before {
-		content: url('../images/leftnav-toggle-close.png');
+		content: url('https://www.lincolnu.edu/_global/images/leftnav-toggle-close.png');
    }
    .leftNav nav > ul {
 	   margin: 0;
@@ -2143,8 +2143,8 @@ footer ul.subfooterLinks li a:focus, footer ul.subfooterLinks li a:hover {
 	.sectionNav .navSectionExpander { position: relative; display: inline-block; font-size: 1rem; line-height: 1; width: 100%; background: #fff; border: 1px solid #fff; text-align: left; padding: 20px 25px; cursor: pointer; }
 	.sectionNav .navSectionExpander span { font-family: "Open-sans", sans-serif; font-weight: 600; color: #393939; text-transform: uppercase; transition: color .4s ease-in-out; }
 	.sectionNav .navSectionExpander:hover span, .sectionNav .navSectionExpander:focus span { color: #2B5891; }
-	.sectionNav .navSectionExpander:before { position: absolute; top: 20px; left: 0; right: auto; width: 20px; height: 16px; content: url('../images/leftnav-toggle.png'); transform-origin: 50% 50%; transform: rotate(0deg); transform-origin: center; transition: all 0.4s ease-in-out; }
-	.sectionNav.open .navSectionExpander:before { height: 23px; top: 12px; left: -5px; transform: rotate(-180deg); content: url('../images/leftnav-toggle-close.png'); }
+	.sectionNav .navSectionExpander:before { position: absolute; top: 20px; left: 0; right: auto; width: 20px; height: 16px; content: url('https://www.lincolnu.edu/_global/images/leftnav-toggle.png'); transform-origin: 50% 50%; transform: rotate(0deg); transform-origin: center; transition: all 0.4s ease-in-out; }
+	.sectionNav.open .navSectionExpander:before { height: 23px; top: 12px; left: -5px; transform: rotate(-180deg); content: url('https://www.lincolnu.edu/_global/images/leftnav-toggle-close.png'); }
 	
 	.interiorContent .mainContent.col8, .landing .interiorContent .mainContent.col8 {
 		width:100%;
@@ -5409,7 +5409,7 @@ img.mfp-img {
 }
 .slick-prev {
 	left: -30px;
-	background-image: url(../images/arrow-left.png);
+	background-image: url('https://www.lincolnu.edu/_global/images/arrow-left.png');
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -5431,7 +5431,7 @@ img.mfp-img {
 }
 .slick-next {
 	right: -30px;
-	background-image: url(../images/arrow-right.png);
+	background-image: url('https://www.lincolnu.edu/_global/images/arrow-right.png');
 	background-position: center center;
 	background-repeat: no-repeat;
 }

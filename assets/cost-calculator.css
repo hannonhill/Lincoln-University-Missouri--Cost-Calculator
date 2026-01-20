@@ -1,25 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
+    max-width: 1350px;
+    padding-inline: 20px;
 }
 
-body {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    background: #ffffff;
-    color: #323232;
-    padding: 20px;
-}
-
-.container {
+.calculator-container {
     max-width: 1350px;
     margin: 0 auto;
     background: white;
 }
 
-h1 {
+.calculator-container h1 {
     font-family: "EB Garamond", serif;
     font-size: 2.5rem;
     font-weight: 500;
@@ -29,7 +19,7 @@ h1 {
     line-height: 1.1;
 }
 
-h2 {
+.calculator-container h2 {
     font-family: "EB Garamond", serif;
     font-size: 1.875rem;
     letter-spacing: 0.4px;
@@ -38,7 +28,7 @@ h2 {
     line-height: 1.1;
 }
 
-h3 {
+.calculator-container h3 {
     font-family: "Raleway", sans-serif;
     font-size: 1em;
     font-weight: 700;
@@ -49,23 +39,34 @@ h3 {
     text-transform: uppercase;
 }
 
-.header {
-    background: linear-gradient(135deg, #0c2340 0%, #2c3e50 100%);
+.calculator-header {
     color: white;
-    padding: 40px;
     text-align: center;
     margin-bottom: 2rem;
+    position: relative;
+    margin-top: -6.7rem;
+    z-index: 1;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
 
-.header h1 {
+.calculator-header h1 {
     color: white;
     margin-bottom: 10px;
 }
 
-.header p {
+.calculator-header p {
     font-size: 1.1rem;
-    opacity: 0.95;
-    color: white;
+    margin-block-end: 0;
+    color: #0c2340;
+    background: #f4f4f4;
+    grid-column: 2;
+    opacity: 1;
+    max-inline-size: 61ch;
+    padding: 2rem;
+    justify-self: end;
 }
 
 .calculator-wrapper {
@@ -365,14 +366,14 @@ input[type="range"]::-moz-range-progress {
     flex-direction: column;
 }
 
-.results-header {
+.results.calculator-header {
     background: #0c2340;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-.results-header h2 {
+.results.calculator-header h2 {
     color: white;
     margin: 0;
     font-size: 1.5rem;
@@ -628,7 +629,7 @@ input[type="range"]::-moz-range-progress {
 }
 
 @media (max-width: 600px) {
-    .header h1 {
+    .calculator-header h1 {
         font-size: 1.8rem;
     }
 

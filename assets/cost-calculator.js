@@ -295,7 +295,6 @@ function resetOptions() {
     enrollmentType
         ? enrollmentType.checked = false
         : null;
-    enrollmentType.blur();
 
     const residencyGroup = document.getElementById('residencyGroup');
     const residency = 
