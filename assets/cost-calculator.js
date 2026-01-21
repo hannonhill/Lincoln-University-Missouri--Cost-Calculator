@@ -90,28 +90,36 @@ function calculateCost() {
     const semesterSelect = document.getElementById('semester').value;
 
     if (!semesterSelect) {
-        createErrorSpan('Please select a term', semesterSection)
+        !semesterSection.classList.contains('errorSection')
+            ? createErrorSpan('Please select a term', semesterSection)
+            : null;
         return;
     } else if (semesterSection.classList.contains('errorSection')) {
         removeErrorSpan(semesterSection);
     }
 
     if (!enrollmentType) {
-        createErrorSpan('Please select an enrollment type (Online or In-Seat)', enrollmentSection)
+        !enrollmentSection.classList.contains('errorSection')
+            ? createErrorSpan('Please select an enrollment type (Online or In-Seat)', enrollmentSection)
+            : null;
         return;
     } else if (enrollmentSection.classList.contains('errorSection')) {
         removeErrorSpan(enrollmentSection)
     }
 
     if (enrollmentType.value === "inseat" && !residency) {
-        createErrorSpan('Please select your residency status', residencySection)
+        !residencySection.classList.contains('errorSection')
+            ? createErrorSpan('Please select your residency status', residencySection)
+            : null;
         return;
     } else if (residencySection.classList.contains('errorSection')) {
         removeErrorSpan(residencySection);
     }
 
     if (!program) {
-        createErrorSpan('Please select a degree program', programSection)
+        !programSection.classList.contains('errorSection')
+            ? createErrorSpan('Please select a degree program', programSection)
+            : null;
         return;
     } else if (programSection.classList.contains('errorSection')) {
         removeErrorSpan(programSection);
@@ -122,7 +130,9 @@ function calculateCost() {
         semesterSelect.value.includes('summer')
             ? max = 12
             : max = 9;
-        createErrorSpan(`Please select credit hours between 1 and ${max}`, creditGroup);
+        !creditGroup.classList.contains('errorSection')
+            ? createErrorSpan(`Please select credit hours between 1 and ${max}`, creditGroup)
+            : null;
         return;
     } else if (creditGroup.classList.contains('errorSection')) {
         removeErrorSpan(creditGroup);
@@ -333,6 +343,13 @@ function resetOptions() {
     booksCost.innerText = '$0'
     const totalCost = document.getElementById('totalCost');
     totalCost.innerText = '$0';
+
+    const errorSections = document.querySelectorAll('.errorSection');
+    errorSections.forEach(section => {
+        section.classList.remove('errorSection');
+        const span = section.querySelector(':scope > span');
+        span.remove();
+    })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
