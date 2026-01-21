@@ -24,7 +24,6 @@
     <link href="./Academics _ Lincoln University of Missouri_files/all.css" rel="stylesheet">
     <link href="./Academics _ Lincoln University of Missouri_files/css2(1)" rel="stylesheet">
     <link href="./Academics _ Lincoln University of Missouri_files/style.css" rel="stylesheet">
-    <!-- <link href="./net-price-calculator.css" rel="stylesheet"> -->
     <!-- Media Gallery CSS -->
     <link href="./Academics _ Lincoln University of Missouri_files/nanogallery2.min.css" rel="stylesheet">
     <link href="./Academics _ Lincoln University of Missouri_files/hh-gallery.css" rel="stylesheet">
@@ -509,15 +508,20 @@
                                     </div>
 
                                     <div class="form-group" id="creditGroup">
-                                        <label for="creditHours">Credit Hours: <span id="creditHoursValue"
-                                                style="color: #0C2340; font-weight: bold; font-size: 1.25em;">6</span></label>
+                                        <label for="creditHours">Credit Hours: 
+                                            <span id="creditHoursValue"
+                                                style="color: #0C2340; font-weight: bold; font-size: 1.25em;">6</span>
+                                            <span>hours</span>
+                                            <span id="hours-courses-bullet">•</span>
+                                            <span>
+                                                <span id="courseCount">2</span>
+                                                course<span id="count_plural">s</span>
+                                            </span>
+                                        </label>
                                         <input type="range" id="creditHours" name="creditHours" min="1" max="12" value="6" step="1">
                                         <div
                                             style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 0.85rem; color: #7f8c8d;">
                                             <span>1</span>
-                                            <!-- <span>3</span> -->
-                                            <!-- <span>6</span> -->
-                                            <!-- <span>9</span> -->
                                             <span id="sliderMax">12</span>
                                         </div>
                                         <p class="help-text">
@@ -525,24 +529,9 @@
                                                 <i class="fas fa-info-circle" inert=""></i>
                                                 Every 3 credit hours = 1 course 
                                             </span>
-                                            <span class="help-text_count">
-                                                <span id="courseCount">2</span>
-                                                course<span id="count_plural">s</span> selected
-                                            </span>
                                         </p>
                                     </div>
                                 </div>
-
-                                <!-- <div class="form-section">
-                                    <h3>Additional Options</h3>
-                                    <div class="checkbox-group">
-                                        <div class="checkbox-option">
-                                            <input type="checkbox" id="includeBooks" checked>
-                                            <span>Books & Supplies</span>
-                                            <span class="fee-amount">$90/course</span>
-                                        </div>
-                                    </div>
-                                </div> -->
 
                                 <div class="calculator-buttons-wrapper">
                                     <button type="button" class="btnLrg" data-button-style="secondary" onclick="calculateCost()">Calculate Total Cost</button>
@@ -555,11 +544,6 @@
                             <div class="results-header">
                                 <h2>Estimated Cost Summary</h2>
                             </div>
-
-                            <!-- <div class="period-selector">
-                                <button class="period-btn active" onclick="togglePeriod('semester')">Per Semester</button>
-                                <button class="period-btn" onclick="togglePeriod('year')">Per Year</button>
-                            </div> -->
 
                             <div class="cost-breakdown">
                                 <div class="cost-category">
