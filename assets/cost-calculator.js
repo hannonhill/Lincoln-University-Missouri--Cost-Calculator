@@ -350,6 +350,11 @@ function resetOptions() {
         const span = section.querySelector(':scope > span');
         span.remove();
     })
+
+    const selectedRadios = document.querySelectorAll('.selected');
+    selectedRadios.forEach(radio => {
+        radio.classList.remove('selected');
+    })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
