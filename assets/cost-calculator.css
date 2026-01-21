@@ -1,6 +1,7 @@
 body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
-    max-width: 1350px;
-    padding-inline: 20px;
+    max-inline-size: 79ch;
+    padding-inline: 20px 30px;
+    margin-inline-start: 9rem;
 }
 
 .calculator-container {
@@ -46,10 +47,11 @@ body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
     position: relative;
     margin-top: -6.7rem;
     z-index: 1;
-    background: transparent;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    max-inline-size: 67ch;
+    left: 100%;
+    translate: -100% 0;
+    color: #0c2340;
+    background: #f4f4f4;
 }
 
 .calculator-header h1 {
@@ -59,14 +61,7 @@ body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
 
 .calculator-header p {
     font-size: 1.1rem;
-    margin-block-end: 0;
-    color: #0c2340;
-    background: #f4f4f4;
-    grid-column: 2;
-    opacity: 1;
-    max-inline-size: 61ch;
     padding: 2rem;
-    justify-self: end;
 }
 
 .calculator-wrapper {
