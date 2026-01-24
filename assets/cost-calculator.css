@@ -69,6 +69,10 @@ body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
     gap: 30px;
 }
 
+#costCalculator {
+    scroll-margin-top: calc(30px + .5rem);
+}
+
 .calculator-form {
     flex: 1;
     background: #f4f4f4;

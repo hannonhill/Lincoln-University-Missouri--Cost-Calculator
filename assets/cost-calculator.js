@@ -65,7 +65,13 @@ function createErrorSpan(text, node) {
     node.classList.add('errorSection');
     let span = document.createElement('span');
     span.innerText = text;
+    span.setAttribute('id', 'errorAnchor');
+    span.style.scrollMarginTop = '.5rem';
     node.insertAdjacentElement('afterbegin', span);
+    span.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 function removeErrorSpan(node) {
@@ -355,6 +361,12 @@ function resetOptions() {
     selectedRadios.forEach(radio => {
         radio.classList.remove('selected');
     })
+
+    const costCalculator = document.getElementById('costCalculator');
+    costCalculator.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
