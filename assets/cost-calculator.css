@@ -634,6 +634,11 @@ select:hover {
     }
 }
 
+#costCalculator:has(input[value="online"]:checked) option:not([data-enrollment *= "online"]),
+#costCalculator:has(input[value="inseat"]:checked) option:not([data-enrollment *= "inseat"]) {
+    display: none;
+}
+
 @media (max-width: 1450px) and (min-width: 1060px) {
     body:has(div.calculator-app) .landing .impact:not(.noImage) .page-title.wrapper {
         left: 0;

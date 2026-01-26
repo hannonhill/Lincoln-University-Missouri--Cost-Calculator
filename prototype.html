@@ -429,9 +429,11 @@
                                 data-online-cost="372"
                                 data-in-state-cost="372"
                                 data-out-of-state-cost="690"
+                                data-art-sci-fee="0"
                                 data-edu-fee="15"
                                 data-bus-fee="20"
                                 data-nur-fee="125"
+                                data-aehs-fee="15"
                                 data-other-programs-fee="0"
                                 data-books-cost="90">
                                 <div class="form-section">
@@ -482,35 +484,35 @@
                                     <div class="form-group" id="programGroup">
                                         <label for="program">Select Your Graduate Program</label>
                                         <select id="program" name="program">
-                                            <option value="">-- Select a Program --</option>
+                                            <option data-enrollment="online inseat" value="">-- Select a Program --</option>
                                             <optgroup label="College of Arts and Sciences - No program fee">
-                                                <option value="art&sci-ced">MA in Community and Economic Development</option>
-                                                <option value="art&sci-his">MA in History</option>
-                                                <option value="art&sci-soc">MA in Sociology</option>
-                                                <option value="art&sci-soccj">MA in Sociology/Criminal Justice</option>
-                                                <option value="art&sci-ns">MS in Natural Sciences</option>
+                                                <option data-enrollment="online" value="art&sci-ced">MA in Community and Economic Development</option>
+                                                <option data-enrollment="inseat" value="art&sci-his">MA in History</option>
+                                                <option data-enrollment="inseat" value="art&sci-soc">MA in Sociology</option>
+                                                <option data-enrollment="inseat" value="art&sci-soccj">MA in Sociology/Criminal Justice</option>
+                                                <option data-enrollment="inseat" value="art&sci-ns">MS in Natural Sciences</option>
                                             </optgroup>
                                             <optgroup label="School of Business - $20/hr fee">
-                                                <option value="bus-mbamgt">MBA - Management</option>
-                                                <option value="bus-mbaacc">MBA - Accounting</option>
-                                                <option value="bus-mbaagr">MBA - Agribusiness</option>
-                                                <option value="bus-mbamis">MBA - Management Information Systems</option>
-                                                <option value="bus-mbaother">MBA - Other Concentrations</option>
+                                                <option data-enrollment="online inseat" value="bus-mbamgt">MBA - Management</option>
+                                                <option data-enrollment="inseat" value="bus-mbaacc">MBA - Accounting</option>
+                                                <option data-enrollment="inseat" value="bus-mbaagr">MBA - Agribusiness</option>
+                                                <option data-enrollment="inseat" value="bus-mbamis">MBA - Management Information Systems</option>
+                                                <option data-enrollment="inseat" value="bus-mbaother">MBA - Other Concentrations</option>
                                             </optgroup>
                                             <optgroup label="School of Education - $15/hr fee">
-                                                <option value="edu-hed">MA in Higher Education (HBCUs emphasis)</option>
-                                                <option value="edu-sas">MEd in School Administration and Supervision (K-12)</option>
-                                                <option value="edu-eds">Education Specialist (EdS) in Clinical Mental Health Counseling or Educational Leadership, school mental health emphasis</option>
-                                                <option value="edu-cet">Graduate Certificate in Educational Technology</option>
-                                                <option value="edu-coun">MEd in Counseling - K-12 School Counseling or Community/Agency Counseling</option>
-                                                <option value="edu-smh">Graduate Certificate in College Student Mental Health</option>
-                                                <option value="edu-other">Other Education Programs</option>
+                                                <option data-enrollment="online" value="edu-hed">MA in Higher Education (HBCUs emphasis)</option>
+                                                <option data-enrollment="online" value="edu-sas">MEd in School Administration and Supervision (K-12)</option>
+                                                <option data-enrollment="online" value="edu-eds">Education Specialist (EdS) in Clinical Mental Health Counseling or Educational Leadership, school mental health emphasis</option>
+                                                <option data-enrollment="online" value="edu-cet">Graduate Certificate in Educational Technology</option>
+                                                <option data-enrollment="inseat" value="edu-coun">MEd in Counseling - K-12 School Counseling or Community/Agency Counseling</option>
+                                                <option data-enrollment="inseat" value="edu-smh">Graduate Certificate in College Student Mental Health</option>
+                                                <option data-enrollment="online inseat" value="edu-other">Other Education Programs</option>
                                             </optgroup>
                                             <optgroup label="College of Agricultural, Environmental, and Human Sciences - $15/hr fee">
-                                                <option value="aehs-sa">MS in Sustainable Agriculture</option>
+                                                <option data-enrollment="inseat" value="aehs-sa">MS in Sustainable Agriculture</option>
                                             </optgroup>
                                             <optgroup label="School of Nursing - $125/hr fee">
-                                                <option value="nur-msn">Master of Science in Nursing (MSN)</option>
+                                                <option data-enrollment="online" value="nur-msn">Master of Science in Nursing (MSN)</option>
                                             </optgroup>
                                         </select>
                                     </div>

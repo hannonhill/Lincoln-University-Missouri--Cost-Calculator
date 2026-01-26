@@ -153,6 +153,8 @@ function calculateCost() {
     let busFee = parseInt(calcForm.dataset.busFee);
     let nurFee = parseInt(calcForm.dataset.nurFee);
     let otherProgramsFee = parseInt(calcForm.dataset.otherProgramsFee);
+    let artSciProgramsFee = parseInt(calcForm.dataset.artSciFee);
+    let aehsFee = parseInt(calcForm.dataset.aehsFee);
     let booksCost = parseInt(calcForm.dataset.booksCost);
 
     let tuitionRate = 0;
@@ -183,6 +185,12 @@ function calculateCost() {
             break;
         case "nur":
             programFeeRate = nurFee;
+            break;
+        case "art&sci":
+            programFeeRate = artSciFee;
+            break;
+        case "aehs":
+            programFeeRate = aehsFee;
             break;
         default:
             programFeeRate = otherProgramsFee;
