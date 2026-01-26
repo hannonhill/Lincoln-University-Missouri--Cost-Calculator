@@ -60,9 +60,7 @@ Adjustable values are stored in the `data-` attributes of the `#costCalculator` 
 - `data-books-cost` - Book cost per course
 
 Program options also include enrollment filtering attributes:
-- `data-enrollment` - Specifies availability: `"online"`, `"inseat"`, or `"both"`
-- `data-online` - Boolean flag for online availability
-- `data-inseat` - Boolean flag for in-seat availability
+- `data-enrollment` - Specifies availability: `"online"` or `"inseat"`
 
 Example:
 ```html
