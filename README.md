@@ -14,8 +14,10 @@ The calculator allows users to:
 
 - **Dynamic cost calculation** based on enrollment type, residency, program, and credit hours
 - **Interactive UI** with real-time updates and form validation
+- **Enrollment-based program filtering** that shows only relevant programs based on online/in-seat selection
+- **Smooth scrolling** to results section after calculation and to errors when validation fails
 - **Flexible configuration** via `data-` attributes for easy rate adjustments
-- **Responsive design** matching Lincoln University's visual style
+- **Responsive design** matching Lincoln University's visual style with optimized layout across devices
 
 ## Project Structure
 
@@ -35,10 +37,12 @@ The calculator allows users to:
 
 ## Program Fees (per credit hour)
 
-- **Education programs** (ECD, HED, MED.K12, MEd.COU): $15/hr
-- **Business programs** (MBA, MBA.MGT): $20/hr
-- **Nursing programs** (MSN): $125/hr
-- **Other programs** (AGR, NS, HIS, SOC/SCJ): No fee
+- **School of Arts and Sciences**: $0/hr
+- **School of Education** (ECD, HED, MED.K12, MEd.COU): $15/hr
+- **School of Business** (MBA, MBA.MGT): $20/hr
+- **School of Nursing** (MSN): $125/hr
+- **College of Agricultural, Environmental, and Human Sciences** (AGR, NS): $15/hr
+- **Other programs** (HIS, SOC/SCJ): No fee
 
 ## Configuration
 
@@ -47,11 +51,18 @@ Adjustable values are stored in the `data-` attributes of the `#costCalculator` 
 - `data-online-cost` - Online tuition rate per credit hour
 - `data-in-state-cost` - In-state tuition rate per credit hour
 - `data-out-of-state-cost` - Out-of-state tuition rate per credit hour
+- `data-art-sci-fee` - Arts & Sciences program fee per credit hour
 - `data-edu-fee` - Education program fee per credit hour
 - `data-bus-fee` - Business program fee per credit hour
 - `data-nur-fee` - Nursing program fee per credit hour
+- `data-aehs-fee` - Agricultural, Environmental, and Human Sciences program fee per credit hour
 - `data-other-programs-fee` - Other programs fee per credit hour
 - `data-books-cost` - Book cost per course
+
+Program options also include enrollment filtering attributes:
+- `data-enrollment` - Specifies availability: `"online"`, `"inseat"`, or `"both"`
+- `data-online` - Boolean flag for online availability
+- `data-inseat` - Boolean flag for in-seat availability
 
 Example:
 ```html
@@ -59,9 +70,11 @@ Example:
     data-online-cost="372"
     data-in-state-cost="372"
     data-out-of-state-cost="690"
+    data-art-sci-fee="0"
     data-edu-fee="15"
     data-bus-fee="20"
     data-nur-fee="125"
+    data-aehs-fee="15"
     data-other-programs-fee="0"
     data-books-cost="90">
 ```
@@ -80,8 +93,12 @@ Example:
 
 - The calculator uses vanilla JavaScript with no external dependencies
 - Form validation ensures all required fields are completed before calculation
+- Program options dynamically filter based on enrollment type selection (online/in-seat)
+- Smooth scrolling automatically guides users to results after calculation or to error messages when validation fails
 - Book costs are estimated at $90 per course (3 credit hours = 1 course)
 - Query string parameters can be used to pre-populate form values
+- Responsive layout adapts to various screen sizes with optimized breakpoints
+- Reset functionality clears all selections and scrolls back to the top of the calculator
 - All cost figures are estimates and may vary based on actual enrollment
 
 ## Disclaimer
