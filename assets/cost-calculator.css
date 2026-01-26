@@ -1,7 +1,7 @@
 body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
-    max-inline-size: 79ch;
-    padding-inline: 20px 30px;
-    margin-inline-start: 9rem;
+    max-inline-size: 1350px;
+    padding-inline: 1em;
+    /* margin-inline-start: 9rem; */
 }
 
 .calculator-container {
@@ -47,7 +47,8 @@ body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
     position: relative;
     margin-top: -6.7rem;
     z-index: 1;
-    max-inline-size: 67ch;
+    /* max-inline-size: 67ch; */
+    inline-size: 46.3%;
     left: 100%;
     translate: -100% 0;
     color: #0c2340;
@@ -631,6 +632,28 @@ select:hover {
     }
 }
 
+@media (max-width: 1450px) and (min-width: 1060px) {
+    body:has(div.calculator-app) .landing .impact:not(.noImage) .page-title.wrapper {
+        left: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 1060px) {
+    body:has(div.calculator-app) .landing .impact:not(.noImage) .page-title.wrapper {
+        left: 0;
+        width: 100%;
+        h1 {
+            margin-left: 0;
+            max-width: 100%;
+        }
+    }
+    .calculator-header {
+        inline-size: 100%;
+        margin-block-start: 0;
+    }
+}
+
 @media (max-width: 960px) {
     .calculator-wrapper {
         flex-direction: column;
@@ -645,13 +668,19 @@ select:hover {
     }
 }
 
+@media (max-width: 680px) {
+    .calculator-buttons-wrapper {
+        display: block;
+    }
+}
+
 @media (max-width: 600px) {
     .calculator-header h1 {
         font-size: 1.8rem;
     }
 
     .calculator-wrapper {
-        padding: 0 15px;
+        /* padding: 0 15px; */
     }
 
     .calculator-form {
