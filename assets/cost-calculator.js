@@ -153,7 +153,7 @@ function calculateCost() {
     let busFee = parseInt(calcForm.dataset.busFee);
     let nurFee = parseInt(calcForm.dataset.nurFee);
     let otherProgramsFee = parseInt(calcForm.dataset.otherProgramsFee);
-    let artSciProgramsFee = parseInt(calcForm.dataset.artSciFee);
+    let artSciFee = parseInt(calcForm.dataset.artSciFee);
     let aehsFee = parseInt(calcForm.dataset.aehsFee);
     let booksCost = parseInt(calcForm.dataset.booksCost);
 
