@@ -382,6 +382,7 @@ select:hover {
     top: 20px;
     display: flex;
     flex-direction: column;
+    scroll-margin-top: .5rem;
 }
 
 .results.calculator-header {

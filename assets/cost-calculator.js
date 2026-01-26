@@ -59,6 +59,12 @@ function updateDisplay() {
         "$" + (lastCalculation.booksCost * multiplier).toLocaleString();
     document.getElementById("totalCost").textContent =
         "$" + (lastCalculation.totalCost * multiplier).toLocaleString();
+
+    const resultsSection = document.querySelector('.results-section');
+    resultsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    })
 }
 
 function createErrorSpan(text, node) {
