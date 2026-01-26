@@ -607,6 +607,8 @@ select:hover {
         padding: .25rem;
         font-size: .8em;
         cursor: pointer;
+        max-inline-size: 78ch;
+        white-space: break-spaces;
         &:hover {
             background: #214f8a;
             color: #f4f4f4;
