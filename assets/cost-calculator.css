@@ -636,8 +636,8 @@ select:hover {
     }
 }
 
-#costCalculator:has(input[value="online"]:checked) option:not([data-enrollment *= "online"]),
-#costCalculator:has(input[value="inseat"]:checked) option:not([data-enrollment *= "inseat"]) {
+#costCalculator:has(input[value="online"]:checked) option:not([data-enrollment *= "online"], #semester option),
+#costCalculator:has(input[value="inseat"]:checked) option:not([data-enrollment *= "inseat"], #semester option) {
     display: none;
 }
 
