@@ -35,6 +35,14 @@ The calculator allows users to:
 - **In-seat Missouri resident**: $372/credit hour
 - **In-seat Non-Missouri resident**: $690/credit hour
 
+## Location Fees
+
+- **Online (LUO)**:
+  - 9+ credit hours: $840 flat fee ($840 ÷ credit hours)
+  - Below 9 credit hours: $94/credit hour
+- **In-seat Missouri resident**: $59.50/credit hour
+- **In-seat Non-Missouri resident**: $59.50/credit hour
+
 ## Program Fees (per credit hour)
 
 - **School of Arts and Sciences**: $0/hr
@@ -58,6 +66,11 @@ Adjustable values are stored in the `data-` attributes of the `#costCalculator` 
 - `data-aehs-fee` - Agricultural, Environmental, and Human Sciences program fee per credit hour
 - `data-other-programs-fee` - Other programs fee per credit hour
 - `data-books-cost` - Book cost per course
+- `data-online-boundary-hours` - Credit hour threshold for online location fee calculation
+- `data-online-upper-boundary-fee` - Flat location fee for online students at or above boundary hours
+- `data-online-lower-boundary-fee` - Per-credit-hour location fee for online students below boundary
+- `data-in-state-fee` - Location fee per credit hour for in-state students
+- `data-out-of-state-fee` - Location fee per credit hour for out-of-state students
 
 Program options also include enrollment filtering attributes:
 - `data-enrollment` - Specifies availability: `"online"` or `"inseat"`
@@ -74,7 +87,12 @@ Example:
     data-nur-fee="125"
     data-aehs-fee="15"
     data-other-programs-fee="0"
-    data-books-cost="90">
+    data-books-cost="90"
+    data-online-boundary-hours="9"
+    data-online-upper-boundary-fee="840"
+    data-online-lower-boundary-fee="94"
+    data-in-state-fee="59.5"
+    data-out-of-state-fee="59.5">
 ```
 
 ## Usage

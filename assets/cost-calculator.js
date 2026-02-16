@@ -51,6 +51,8 @@ function updateDisplay() {
         lastCalculation.tuitionRateDisplay;
     document.getElementById("tuitionCost").textContent =
         "$" + (lastCalculation.tuitionCost * multiplier).toLocaleString();
+    document.getElementById("locationFees").textContent =
+        "$" + (lastCalculation.locationFee * multiplier).toLocaleString();
     document.getElementById("programFees").textContent =
         "$" + (lastCalculation.programFees * multiplier).toLocaleString();
     document.getElementById("numCourses").textContent =
@@ -163,19 +165,34 @@ function calculateCost() {
     let aehsFee = parseInt(calcForm.dataset.aehsFee);
     let booksCost = parseInt(calcForm.dataset.booksCost);
 
+    let locationFee = 0;
     let tuitionRate = 0;
     let tuitionRateDisplay = "";
 
     if (enrollmentType.value === "online") {
         tuitionRate = onlineCost;
         tuitionRateDisplay = `$${onlineCost}`;
+
+        let onlineBoundaryHours = parseInt(calcForm.dataset.onlineBoundaryHours);
+        let onlineUpperBoundFee = parseInt(calcForm.dataset.onlineUpperBoundaryFee);
+        let onlineLowerBoundFee = parseInt(calcForm.dataset.onlineLowerBoundaryFee);
+        creditHours >= onlineBoundaryHours ?
+            locationFee = onlineUpperBoundFee / creditHours
+            : locationFee = onlineLowerBoundFee;
     } else if (enrollmentType.value === "inseat") {
         if (residency.value === "instate") {
             tuitionRate = inStateCost;
             tuitionRateDisplay = `$${inStateCost}`;
+
+            let inStateFee = parseInt(calcForm.dataset.inStateFee);
+            locationFee = inStateFee;
         } else {
             tuitionRate = outOfStateCost;
             tuitionRateDisplay = `$${outOfStateCost}`;
+
+            let outOfStateFee = parseInt(calcForm.dataset.outOfStateFee);
+            locationFee = outOfStateFee;
+
         }
     }
 
@@ -206,7 +223,8 @@ function calculateCost() {
     const programFees = programFeeRate * creditHours;
     const numCourses = Math.ceil(creditHours / 3);
     booksCost = numCourses * booksCost;
-    const totalCost = tuitionCost + programFees + booksCost;
+    locationFee = locationFee * creditHours;
+    const totalCost = tuitionCost + locationFee + programFees + booksCost;
 
     lastCalculation = {
         tuitionRateDisplay: tuitionRateDisplay,
@@ -214,7 +232,8 @@ function calculateCost() {
         programFees: programFees,
         numCourses: numCourses,
         booksCost: booksCost,
-        totalCost: totalCost,
+        locationFee: locationFee,
+        totalCost: totalCost
     };
 
     updateDisplay();
@@ -355,6 +374,8 @@ function resetOptions() {
     tuitionRate.innerText = '$0';
     const tuitionCost = document.getElementById('tuitionCost');
     tuitionCost.innerText = '$0';
+    const locationFees = document.getElementById('locationFees');
+    locationFees.innerText = '$0';
     const programFees = document.getElementById('programFees');
     programFees.innerText = '$0';
     const numCourses = document.getElementById('numCourses');
