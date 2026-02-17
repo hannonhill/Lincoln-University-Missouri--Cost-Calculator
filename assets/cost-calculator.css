@@ -8,7 +8,6 @@ body:has(div.calculator-app) .mainBody .wrapper.fullWidth .page-title {
     max-width: 1350px;
     margin: 0 auto;
     background: white;
-    container-type: inline-size;
 }
 
 .calculator-container h1 {
@@ -646,6 +645,7 @@ select:hover {
 
 /* Responsive */
 .calculator-container {
+    container-type: inline-size;
     @container (max-width: 66.25em) {
         .calculator-header {
             inline-size: 100%;
