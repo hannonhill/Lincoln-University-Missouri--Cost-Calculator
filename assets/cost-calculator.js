@@ -11,6 +11,9 @@ function selectRadio(element) {
     element.classList.add("selected");
     element.querySelector('input[type="radio"]').checked = true;
 
+    const programSelect = document.getElementById('program');
+    programSelect.value = '';
+
     if (element.querySelector("input").name === "enrollmentType") {
         const value = element.querySelector("input").value;
         const residencyGroup = document.getElementById("residencyGroup");
