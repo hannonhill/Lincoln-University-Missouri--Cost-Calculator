@@ -232,9 +232,7 @@ function calculateCost() {
     const totalCost = tuitionCost + locationFee + programFees + booksCost;
 
     const programSelect = document.getElementById('program');
-    const selectedIndex = programSelect.selectedIndex;
-    const selectedOption = programSelect.options[selectedIndex];
-    const programLabel = selectedOption.text;
+    const programLabel = programSelect.options[programSelect.selectedIndex].text;
     console.log(`Program Selected: ${programLabel} | `,
                 `${enrollmentType.nextElementSibling.innerText} Fee: $${tuitionRate}/hr | `, 
                 `Total Credit Hours: ${creditHours} | `, 
