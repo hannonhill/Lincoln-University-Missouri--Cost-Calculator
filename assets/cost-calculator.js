@@ -225,9 +225,20 @@ function calculateCost() {
     const tuitionCost = tuitionRate * creditHours;
     const programFees = programFeeRate * creditHours;
     const numCourses = Math.ceil(creditHours / 3);
-    booksCost = numCourses * booksCost;
+    booksCost = numCourses * booksCost > 340
+                ? 340
+                : numCourses * booksCost;
     locationFee = locationFee * creditHours;
     const totalCost = tuitionCost + locationFee + programFees + booksCost;
+
+    const programSelect = document.getElementById('program');
+    const selectedIndex = programSelect.selectedIndex;
+    const selectedOption = programSelect.options[selectedIndex];
+    const programLabel = selectedOption.text;
+    console.log(`Program Selected: ${programLabel} | `,
+                `${enrollmentType.nextElementSibling.innerText} Fee: $${tuitionRate}/hr | `, 
+                `Total Credit Hours: ${creditHours} | `, 
+                `Total Cost: $${tuitionCost}`);
 
     lastCalculation = {
         tuitionRateDisplay: tuitionRateDisplay,
