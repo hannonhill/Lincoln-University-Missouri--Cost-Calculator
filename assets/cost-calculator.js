@@ -236,7 +236,7 @@ function calculateCost() {
     console.log(`Program Selected: ${programLabel} | `,
                 `${enrollmentType.nextElementSibling.innerText} Fee: $${tuitionRate}/hr | `, 
                 `Total Credit Hours: ${creditHours} | `, 
-                `Total Cost: $${tuitionCost}`);
+                `Tuiton Cost: $${tuitionCost}`);
 
     lastCalculation = {
         tuitionRateDisplay: tuitionRateDisplay,
