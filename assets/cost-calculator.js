@@ -379,11 +379,13 @@ function resetOptions() {
     const creditHoursValue = document.getElementById('creditHoursValue');
     const courseCount = document.getElementById('courseCount');
     const countPlural = document.getElementById('count_plural');
+    const bookCountPlural = document.getElementById('book_count_plural');
     creditHours.value = '6';
     creditHours.setAttribute('max', '12');
     creditHoursValue.innerText = '6';
     courseCount.innerText = '2';
     countPlural.removeAttribute('hidden');
+    bookCountPlural.setAttribute('hidden', '');
 
     updateURLFromOptions();
 
