@@ -65,6 +65,11 @@ function updateDisplay() {
     document.getElementById("totalCost").textContent =
         "$" + (lastCalculation.totalCost * multiplier).toLocaleString();
 
+    const bookCountPlural = document.getElementById('book_count_plural');
+    lastCalculation.numCourses > 1
+        ? bookCountPlural.removeAttribute('hidden')
+        : bookCountPlural.setAttribute('hidden', '');
+
     const resultsSection = document.querySelector('.results-section');
     resultsSection.scrollIntoView({
         behavior: "smooth",
@@ -236,7 +241,7 @@ function calculateCost() {
     console.log(`Program Selected: ${programLabel} | `,
                 `${enrollmentType.nextElementSibling.innerText} Fee: $${tuitionRate}/hr | `, 
                 `Total Credit Hours: ${creditHours} | `, 
-                `Tuiton Cost: $${tuitionCost}`);
+                `Tuition Cost: $${tuitionCost}`);
 
     lastCalculation = {
         tuitionRateDisplay: tuitionRateDisplay,
@@ -391,7 +396,7 @@ function resetOptions() {
     const programFees = document.getElementById('programFees');
     programFees.innerText = '$0';
     const numCourses = document.getElementById('numCourses');
-    numCourses.innerText = '0';
+    numCourses.innerText = '1';
     const booksCost = document.getElementById('booksCost');
     booksCost.innerText = '$0'
     const totalCost = document.getElementById('totalCost');
@@ -418,7 +423,7 @@ function resetOptions() {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("tuitionRate").textContent = "$0";
-    document.getElementById("numCourses").textContent = "0";
+    document.getElementById("numCourses").textContent = "1";
     
     const creditSlider = document.getElementById("creditHours");
     const creditValue = document.getElementById("creditHoursValue");
