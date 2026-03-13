@@ -109,16 +109,19 @@ function calculateCost() {
     const residencySection = document.getElementById('residencyGroup');
     const programSection = document.getElementById('programGroup');
     const creditGroup = document.getElementById('creditGroup');
-    const semesterSelect = document.getElementById('semester').value | '';
+    const semesterSelect = document.getElementById('semester')?.value;
 
-    if (!semesterSelect) {
-        !semesterSection.classList.contains('errorSection')
-            ? createErrorSpan('Please select a term', semesterSection)
-            : null;
-        return;
-    } else if (semesterSection.classList.contains('errorSection')) {
-        removeErrorSpan(semesterSection);
+    if(semesterSection) {
+        if (!semesterSelect) {
+            !semesterSection.classList.contains('errorSection')
+                ? createErrorSpan('Please select a term', semesterSection)
+                : null;
+            return;
+        } else if (semesterSection.classList.contains('errorSection')) {
+            removeErrorSpan(semesterSection);
+        }
     }
+
 
     if (!enrollmentType) {
         !enrollmentSection.classList.contains('errorSection')
@@ -260,7 +263,7 @@ function updateURLFromOptions() {
     const params = new URLSearchParams();
 
     const semester = document.getElementById('semester');
-    if (semester.value) {
+    if (semester?.value) {
         const semesterName = semester.name;
         const semesterValue = semester.value;
         params.set(semesterName, semesterValue);
@@ -354,7 +357,9 @@ function applyOptionsFromURL() {
 
 function resetOptions() {
     const semester = document.getElementById('semester');
-    semester.value = '';
+    if(semester) {
+        semester.value = '';
+    }
 
     const enrollmentType = 
         document.querySelector('input[name="enrollmentType"]:checked');
@@ -454,21 +459,23 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const semesterSelect = document.getElementById('semester');
     let sliderMax = document.getElementById('sliderMax');
-    semesterSelect.addEventListener('change', function() {
-        const isSummer = this.value.includes('summer');
-        switch(isSummer) {
-            case true: 
-                creditSlider.setAttribute('max', '9');
-                sliderMax.textContent = '9';
-                creditValue.textContent = creditSlider.value;
-                break;
-            default:
-                creditSlider.setAttribute('max', '12');
-                sliderMax.textContent = '12';
-                creditValue.textContent = creditSlider.value;
-        }
-        updateURLFromOptions();
-    });
+    if (semesterSelect) {
+        semesterSelect.addEventListener('change', function() {
+            const isSummer = this.value.includes('summer');
+            switch(isSummer) {
+                case true: 
+                    creditSlider.setAttribute('max', '9');
+                    sliderMax.textContent = '9';
+                    creditValue.textContent = creditSlider.value;
+                    break;
+                default:
+                    creditSlider.setAttribute('max', '12');
+                    sliderMax.textContent = '12';
+                    creditValue.textContent = creditSlider.value;
+            }
+            updateURLFromOptions();
+        });
+    }
 
     const programSelect = document.getElementById('program');
     programSelect.addEventListener('change', () => {
