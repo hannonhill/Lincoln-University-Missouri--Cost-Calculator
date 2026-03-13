@@ -109,7 +109,7 @@ function calculateCost() {
     const residencySection = document.getElementById('residencyGroup');
     const programSection = document.getElementById('programGroup');
     const creditGroup = document.getElementById('creditGroup');
-    const semesterSelect = document.getElementById('semester').value;
+    const semesterSelect = document.getElementById('semester').value | '';
 
     if (!semesterSelect) {
         !semesterSection.classList.contains('errorSection')
